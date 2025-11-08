@@ -1,0 +1,89 @@
+"use client";
+
+import { Typography } from "@material-tailwind/react";
+import CodingIcon from "../components/icons/coding-icon";
+import ToolIcon from "../components/icons/tool-icon";
+import BooksIcon from "../components/icons/books-icon";
+
+import SkillCard from "../components/skill-card";
+
+const SKILLS = [
+  {
+    icon: CodingIcon,
+    title: "Languages",
+    children: [
+      "TypeScript",
+      "Java",
+      "SQL",
+      "HTML5",
+      "CSS3",
+      "JavaScript (ES6+)",
+      "C++",
+      "Python",
+    ],
+  },
+  {
+    icon: ToolIcon,
+    title: "Tools & Platforms",
+    children: [
+      "Git & GitHub",
+      "MySQL",
+      "SQLite",
+      "MongoDB",
+      "Next.js",
+      "NPM",
+      "REST APIs",
+      "Agile / Scrum",
+      "MVC Architecture",
+      "Vercel",
+      "VS Code",
+    ],
+  },
+  {
+    icon: BooksIcon,
+    title: "Libraries & Frameworks",
+    children: [
+      "React",
+      "Angular",
+      "Node.js",
+      "Express.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "Material Tailwind",
+      "Heroicons",
+    ],
+  },
+];
+
+export function Skills() {
+  return (
+    <section className="px-8 mt-20">
+      <div className="container mx-auto mb-5 text-center">
+        <Typography
+          color="blue-gray"
+          className="mb-2 font-bold uppercase text-violet-900 tracking-wide"
+        >
+          my skills
+        </Typography>
+        <Typography variant="h1" color="blue-gray" className="mb-4">
+          What I bring to the table
+        </Typography>
+        <Typography
+          variant="lead"
+          className="mx-auto w-full !text-gray-500 lg:w-10/12"
+        >
+          I&apos;m a developer that loves to learn. I am extremely adaptive and
+          excel at picking up new tools or strategies that tackle specific
+          problems.
+        </Typography>
+      </div>
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {SKILLS.map((props, idx) => (
+          <SkillCard key={idx} {...props} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export default Skills;

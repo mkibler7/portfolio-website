@@ -1,0 +1,39 @@
+import { Card, CardBody, Typography } from "@material-tailwind/react";
+
+interface SkillCardProps {
+  title: string;
+  icon: React.ElementType;
+  children: string[];
+}
+
+export function SkillCard({ icon: Icon, title, children }: SkillCardProps) {
+  return (
+    <Card color="transparent" shadow={false}>
+      <CardBody className="grid justify-center text-center">
+        <div className="mx-auto mb-6 grid h-12 w-12 place-items-center rounded-full bg-gray-900 p-2.5 text-white shadow">
+          <Icon className="h-6 w-6 shadow-sm" strokeWidth={2} />
+        </div>
+        <Typography variant="h5" className="text-blue-gray-900">
+          {title}
+        </Typography>
+
+        <div className="mx-auto my-3 h-[2px] w-full bg-gradient-to-r from-transparent via-violet-500/20 to-transparent rounded-full"></div>
+
+        {/* Map through array of skills */}
+        <ul className="flex flex-wrap justify-center gap-x-3 gap-y-4 px-4">
+          {children.map((skill, index) => (
+            <li
+              key={index}
+              className="rounded-full bg-violet-100 border border-violet-300 text-violet-800 
+                 text-sm font-medium py-2 px-4 shadow-sm select-none"
+            >
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </CardBody>
+    </Card>
+  );
+}
+
+export default SkillCard;
