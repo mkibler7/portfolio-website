@@ -1,18 +1,16 @@
 import type { Config } from "tailwindcss";
-const withMT = require("@material-tailwind/react/utils/withMT");
-const colors = require("tailwindcss/colors");
+import withMT from "@material-tailwind/react/utils/withMT";
+import colors from "tailwindcss/colors";
 
-const config: Config = withMT({
+const config: Config = {
   content: [
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {
-    colors: {
-      ...colors,
-    },
-  },
+  theme: { extend: { colors: { ...colors } } },
   plugins: [],
-});
+};
 
-export default config;
+export default withMT(config);

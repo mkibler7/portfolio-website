@@ -46,7 +46,7 @@ export function Projects() {
           className="mx-auto w-full px-4 font-normal !text-gray-500 lg:w-6/12"
         >
           From concept to deployment, I design and develop full-stack web and
-          mobile applications that deliver real-world impact. Whether it's
+          mobile applications that deliver real-world impact. Whether it&apos;s
           building modern, responsive interfaces or engineering robust backend
           systems, I create end-to-end solutions that bring ideas to life
           through clean design, performance, and scalability.

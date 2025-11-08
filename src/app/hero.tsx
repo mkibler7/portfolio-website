@@ -29,7 +29,7 @@ export default function Hero() {
             className="relative inline-block mb-4 lg:text-5xl !leading-tight text-3xl text-indigo-900"
           >
             <span className="bg-gradient-to-r from-violet-900 to-indigo-600 bg-clip-text text-transparent">
-              Hello, I'm Michael Kibler.
+              Hello, I&apos;m Michael Kibler.
             </span>
             <div className="mx-auto mt-3 h-[2px] w-full bg-gradient-to-r from-transparent via-violet-500/70 to-transparent rounded-full"></div>
           </Typography>
