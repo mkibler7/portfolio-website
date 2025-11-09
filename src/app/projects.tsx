@@ -27,7 +27,7 @@ const PROJECTS = [
     img: `/image/portfolio1.jpg`,
     title: "Porfolio Website",
     desc: "A website built to showcase my projects and highlight my skills.",
-    href: "http://localhost:3000/",
+    href: "http://michaelkibler.dev/",
   },
 ];
 
