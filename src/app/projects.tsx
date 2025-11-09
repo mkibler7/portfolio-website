@@ -6,25 +6,25 @@ import { getImagePrefix } from "../../utils/utils";
 
 const PROJECTS = [
   {
-    img: `${getImagePrefix()}image/travlr1.jpg`,
+    img: `/image/travlr1.jpg`,
     title: "Travlr",
     desc: "A fullstack application built on the MEAN stack to recommend travel packages.",
     href: "https://github.com/mkibler7/Travlr-Getaways?tab=readme-ov-file",
   },
   {
-    img: `${getImagePrefix()}image/weight-wise1.jpg`,
+    img: `/image/weight-wise1.jpg`,
     title: "Weight-Wise",
     desc: "An Anroid application developed to allow user's to record data related to their weight goals.",
     href: "https://github.com/mkibler7/Weight-Wise",
   },
   {
-    img: `${getImagePrefix()}image/course-planner1.jpg`,
+    img: `/image/course-planner1.jpg`,
     title: "Course Planner",
     desc: "A simple CLI application used to show which prerequisite classes are needed before enrolling in a specific class.",
     href: "https://github.com/mkibler7/Course-Prerequisite-Manager",
   },
   {
-    img: `${getImagePrefix()}image/portfolio1.jpg`,
+    img: `/image/portfolio1.jpg`,
     title: "Porfolio Website",
     desc: "A website built to showcase my projects and highlight my skills.",
     href: "http://localhost:3000/",

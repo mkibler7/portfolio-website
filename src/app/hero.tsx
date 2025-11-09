@@ -66,11 +66,11 @@ export default function Hero() {
             width={1024}
             height={1024}
             alt="Michael Kibler portriat"
-            src={`${getImagePrefix()}image/self-portrait.jpg`}
+            src={`/image/self-portrait.jpg`}
             className="relative size-full rounded-full object-cover"
             priority
             placeholder="blur"
-            blurDataURL={`${getImagePrefix()}image/self-portrait-blur.jpg`}
+            blurDataURL={`/image/self-portrait-blur.jpg`}
             onLoadingComplete={() => setLoaded(true)}
           />
         </div>
