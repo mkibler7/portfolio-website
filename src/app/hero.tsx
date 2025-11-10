@@ -7,16 +7,6 @@ import { getImagePrefix } from "../../utils/utils";
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
-  // const [delayDone, setDelayDone] = useState(false);
-
-  // const delayMs = 0;
-
-  // useEffect(() => {
-  //   const t = setTimeout(() => setDelayDone(true), delayMs);
-  //   return () => clearTimeout(t);
-  // }, [delayMs]);
-
-  // const show = loaded && delayDone;
 
   return (
     <header className="bg-violet-50 p-8">

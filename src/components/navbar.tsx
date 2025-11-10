@@ -4,6 +4,7 @@ import React from "react";
 import LinkedInIcon from "./icons/linkedin-icon";
 import GitHubIcon from "./icons/github-icon";
 import ResumeIcon from "./icons/resume-icon";
+import Link from "next/link";
 
 import {
   Navbar as MTNavbar,
@@ -37,28 +38,44 @@ const NAV_MENU = [
   {
     name: "Resume",
     icon: ResumeIcon,
-    href: "#",
+    href: "/resume",
+    external: false,
   },
 ];
 
 interface NavItemProps {
   children: React.ReactNode;
   href?: string;
+  external: boolean;
 }
 
-function NavItem({ children, href }: NavItemProps) {
+function NavItem({ children, href = "#", external = false }: NavItemProps) {
+  const classes =
+    "flex items-center gap-2 font-medium hover:text-violet-600 text-violet-900 justify-center";
+
+  if (external) {
+    return (
+      <li className="w-full">
+        <Typography
+          as="a"
+          href={href || "#"}
+          target={href ? "_blank" : "_self"}
+          variant="paragraph"
+          color="gray"
+          className="flex items-center gap-2 font-medium hover:text-violet-600 text-violet-900 justify-center"
+        >
+          {children}
+        </Typography>
+      </li>
+    );
+  }
+
+  // For internal links like /resume → use Next.js Link
   return (
     <li className="w-full">
-      <Typography
-        as="a"
-        href={href || "#"}
-        target={href ? "_blank" : "_self"}
-        variant="paragraph"
-        color="gray"
-        className="flex items-center gap-2 font-medium hover:text-violet-600 text-violet-900 justify-center"
-      >
+      <Link href={href} className={classes}>
         {children}
-      </Typography>
+      </Link>
     </li>
   );
 }
@@ -90,10 +107,10 @@ export function Navbar() {
             Kibler
           </Typography>
 
-          {/* Center: Social Links (desktop) */}
+          {/* Center: Social Links/Resume (desktop) */}
           <ul className="hidden lg:flex items-center justify-center gap-8 mr-5">
-            {NAV_MENU.map(({ name, icon: Icon, href }) => (
-              <NavItem key={name} href={href}>
+            {NAV_MENU.map(({ name, icon: Icon, href, external }) => (
+              <NavItem key={name} href={href} external={external}>
                 <Icon className="h-5 w-5" />
                 {name}
               </NavItem>
@@ -144,7 +161,7 @@ export function Navbar() {
         >
           <div className="mt-3 w-[18rem] rounded-xl border border-gray-100 bg-white p-4">
             <ul className="flex flex-col gap-4 items-center text-center">
-              {NAV_MENU.map(({ name, icon: Icon, href }, index) => (
+              {NAV_MENU.map(({ name, icon: Icon, href, external }, index) => (
                 <li
                   key={name}
                   className={`w-full ${
@@ -153,7 +170,7 @@ export function Navbar() {
                       : "border-b border-gray-200/30"
                   } py-2`}
                 >
-                  <NavItem href={href}>
+                  <NavItem key={name} href={href} external={external}>
                     <Icon className="h-5 w-5" />
                     {name}
                   </NavItem>

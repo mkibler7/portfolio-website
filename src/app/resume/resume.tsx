@@ -7,7 +7,7 @@ import {
   CursorArrowRaysIcon,
   ArrowRightIcon,
 } from "@heroicons/react/24/solid";
-import ResumeItem from "../components/resume-item";
+import ResumeItem from "../../components/resume-item";
 
 const RESUME_ITEMS = [
   {
