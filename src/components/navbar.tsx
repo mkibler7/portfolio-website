@@ -5,6 +5,7 @@ import LinkedInIcon from "./icons/linkedin-icon";
 import GitHubIcon from "./icons/github-icon";
 import ResumeIcon from "./icons/resume-icon";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import {
   Navbar as MTNavbar,
@@ -82,8 +83,24 @@ function NavItem({ children, href = "#", external = false }: NavItemProps) {
 
 export function Navbar() {
   const [open, setOpen] = React.useState(false);
+  const router = useRouter();
 
   const handleOpen = () => setOpen((cur) => !cur);
+
+  const handleScroll = (id: string) => {
+    if (typeof window === "undefined") return;
+
+    // If already on the homepage, scroll directly
+    if (window.location.pathname === "/") {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Navigate to home, then scroll after navigation
+      router.push(`/#${id}`);
+    }
+  };
 
   React.useEffect(() => {
     window.addEventListener(
@@ -121,19 +138,23 @@ export function Navbar() {
           <div className="ml-5 hidden lg:flex items-center justify-end gap-2">
             <Button
               variant="text"
-              className="hover:text-violet-700 text-violet-900"
+              className="text-violet-900 hover:text-violet-600"
+              onClick={() => handleScroll("projects")}
             >
               Projects
             </Button>
+
             <Button
               variant="text"
               className="text-violet-900 hover:text-violet-600"
+              onClick={() => handleScroll("resume")}
             >
               About
             </Button>
             <Button
               variant="filled"
               className="bg-violet-900 hover:bg-violet-600"
+              onClick={() => handleScroll("contact")}
             >
               Contact
             </Button>
@@ -182,18 +203,21 @@ export function Navbar() {
               <Button
                 variant="text"
                 className="text-violet-900 hover:text-violet-600 w-full"
+                onClick={() => handleScroll("projects")}
               >
                 Projects
               </Button>
               <Button
                 variant="text"
                 className="text-violet-900 hover:text-violet-600 w-full"
+                onClick={() => handleScroll("resume")}
               >
                 About
               </Button>
               <Button
                 variant="filled"
                 className="w-full bg-violet-900 hover:bg-violet-600 !shadow-none"
+                onClick={() => handleScroll("contact")}
               >
                 Contact
               </Button>

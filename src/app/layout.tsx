@@ -11,7 +11,11 @@ const ClientThemeProvider = dynamic(
   { ssr: false }
 );
 
-export const metadata: Metadata = { title: "Test", description: "Debug" };
+export const metadata: Metadata = {
+  title: "Michael's Portfolio",
+  description: "Debug",
+  icons: { icon: "/favicon.png" },
+};
 
 export default function RootLayout({
   children,

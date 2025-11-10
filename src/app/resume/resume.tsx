@@ -26,7 +26,7 @@ const RESUME_ITEMS = [
 
 export function Resume() {
   return (
-    <section className="px-8 py-24 bg-violet-50">
+    <section id="resume" className="px-8 py-24 bg-violet-50">
       <div className="container mx-auto grid w-full grid-cols-1 items-center gap-16 lg:grid-cols-2">
         <div className="col-span-1">
           <Typography variant="h2" color="blue-gray">
@@ -37,17 +37,19 @@ export function Resume() {
             applications with a focus on clean architecture, maintainable code,
             and intuitive user experiences.
           </Typography>
-          <Button
-            variant="text"
-            color="gray"
-            className="flex items-center gap-2"
-          >
-            View Resume
-            <ArrowRightIcon
-              strokeWidth={3}
-              className="h-3.5 w-3.5 text-gray-900"
-            />
-          </Button>
+          <a href="/resume">
+            <Button
+              variant="text"
+              color="gray"
+              className="flex items-center gap-2"
+            >
+              View Resume
+              <ArrowRightIcon
+                strokeWidth={3}
+                className="h-3.5 w-3.5 text-gray-900"
+              />
+            </Button>
+          </a>
         </div>
         <div className="col-span-1 grid gap-y-6 lg:ml-auto pr-0 lg:pr-12 xl:pr-32">
           {RESUME_ITEMS.map((props, idx) => (

@@ -33,7 +33,7 @@ const PROJECTS = [
 
 export function Projects() {
   return (
-    <section className="py-28 px-8">
+    <section id="projects" className="py-28 px-8">
       <div className="container mx-auto mb-[4.25rem] text-center">
         {/* Section Title */}
         <Typography variant="h2" color="blue-gray" className="mb-10">

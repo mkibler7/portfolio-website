@@ -14,7 +14,7 @@ import { EnvelopeIcon, PhoneIcon, TicketIcon } from "@heroicons/react/24/solid";
 
 export function ContactForm() {
   return (
-    <section className="px-8 py-16">
+    <section id="contact" className="px-8 py-16">
       <div className="container mx-auto mb-20 text-center">
         <Typography
           variant="h1"
@@ -23,17 +23,12 @@ export function ContactForm() {
         >
           Contact
         </Typography>
-        {/*<Typography
-          variant="lead"
-          color=""
-          className="mx-auto w-full lg:w-5/12 !text-gray-500"
-        >
-          Ready to get started? Feel free to reach out through the contact form,
-          and let&apos;s embark on a journey of innovation and success. 
-        </Typography>*/}
       </div>
       <div>
-        <Card shadow={true} className="container mx-auto border border-gray/50">
+        <Card
+          shadow={true}
+          className="container mx-auto border border-gray/50 bg-violet-50"
+        >
           <CardBody className="grid grid-cols-1 lg:grid-cols-7 md:gap-10">
             <div className="w-full col-span-3 rounded-lg h-full py-8 p-5 md:p-16 bg-violet-900">
               <Typography variant="h4" color="white" className="mb-2">
@@ -58,12 +53,6 @@ export function ContactForm() {
                   mpkibler7@gmail.com
                 </Typography>
               </div>
-              {/* <div className="flex mb-10 gap-5">
-                <TicketIcon className="h-6 w-6 text-white" />
-                <Typography variant="h6" color="white" className="mb-2">
-                  Open Support Ticket
-                </Typography>
-              </div> */}
               <div className="flex items-center gap-5">
                 <IconButton variant="text" color="white">
                   <i className="fa-brands fa-facebook text-lg" />
@@ -91,7 +80,6 @@ export function ContactForm() {
                       className: "!min-w-full mb-3 md:mb-0",
                     }}
                   />
-                  {/* @ts-ignore */}
                   <Input
                     color="gray"
                     size="lg"
@@ -104,7 +92,6 @@ export function ContactForm() {
                     }}
                   />
                 </div>
-                {/* @ts-ignore */}
                 <Input
                   color="gray"
                   size="lg"
@@ -116,28 +103,6 @@ export function ContactForm() {
                     className: "!min-w-full mb-8",
                   }}
                 />
-                {/* <Typography
-                  variant="lead"
-                  className="!text-blue-gray-500 text-sm mb-2"
-                >
-                  What are you interested on?
-                </Typography>
-                <div className="-ml-3 mb-14 ">
-                  {/* @ts-ignore }
-                  <Radio
-                    color="gray"
-                    name="type"
-                    label="Design"
-                    defaultChecked
-                  />
-                  {/* @ts-ignore }
-                  <Radio color="gray" name="type" label="Development" />
-                  {/* @ts-ignore }
-                  <Radio color="gray" name="type" label="Support" />
-                  {/* @ts-ignore }
-                  <Radio color="gray" name="type" label="Other" />
-                </div> */}
-                {/* @ts-ignore */}
                 <Textarea
                   color="gray"
                   size="lg"
