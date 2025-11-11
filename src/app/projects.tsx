@@ -14,7 +14,7 @@ const PROJECTS = [
   {
     img: `/image/weight-wise1.jpg`,
     title: "Weight-Wise",
-    desc: "An Anroid application developed to allow user's to record data related to their weight goals.",
+    desc: "An Android application developed to allow user's to record data related to their weight goals.",
     href: "https://github.com/mkibler7/Weight-Wise",
   },
   {

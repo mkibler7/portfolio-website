@@ -25,7 +25,7 @@ export function SkillCard({ icon: Icon, title, children }: SkillCardProps) {
             <li
               key={index}
               className="rounded-full bg-violet-100 border border-violet-300 text-violet-800 
-                 text-sm font-medium py-2 px-4 shadow-sm select-none"
+                 text-sm font-medium py-2 px-4 shadow-sm select-none hover:bg-violet-800 hover:text-violet-100"
             >
               {skill}
             </li>

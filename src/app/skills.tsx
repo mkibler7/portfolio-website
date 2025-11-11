@@ -37,6 +37,7 @@ const SKILLS = [
       "MVC Architecture",
       "Vercel",
       "VS Code",
+      "Resend",
     ],
   },
   {
