@@ -90,7 +90,7 @@ export function ContactForm() {
         <Typography
           variant="h1"
           color="blue-gray"
-          className="mb-4 text-violet-900"
+          className="mb-4 text-gray-800"
         >
           Contact
         </Typography>

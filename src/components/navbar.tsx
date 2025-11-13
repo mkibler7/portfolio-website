@@ -113,12 +113,6 @@ export function Navbar() {
         {/* top row */}
         <div className="container mx-auto flex items-center justify-between lg:grid lg:grid-cols-3 ">
           {/* Left: Logo */}
-          {/* <Link
-            href="/"
-            className="text-lg font-bold text-violet-900 tracking-wide hover:text-[#5b21b6] transition-colors"
-          >
-            Kibler
-          </Link> */}
           <a href="/">
             <Image
               src="/image/kibler.png"
@@ -179,7 +173,7 @@ export function Navbar() {
           </IconButton>
         </div>
 
-        {/* Floating dropdown: absolute, right aligned, no page-wide background */}
+        {/* Floating dropdown */}
         <Collapse
           open={open}
           className="absolute right-2 top-full w-auto bg-transparent shadow-none"
