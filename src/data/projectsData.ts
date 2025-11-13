@@ -1,8 +1,8 @@
 export interface Project {
   id: string;
   title: string;
-  description: string;
-  imgs: string[];
+  desc: string;
+  images: string[];
   href: string;
   skills: string[];
 }
@@ -19,7 +19,7 @@ export interface Project {
 export const PROJECTS = [
   {
     id: "travlr",
-    imgs: [
+    images: [
       "/image/travlr1.jpg",
       "/image/travlr2.jpg",
       "/image/travlr3.jpg",
@@ -48,7 +48,7 @@ export const PROJECTS = [
   },
   {
     id: "weight-wise",
-    imgs: [
+    images: [
       "/image/weight-wise1.jpg",
       "/image/weight-wise2.jpg",
       "/image/weight-wise3.jpg",
@@ -68,7 +68,7 @@ export const PROJECTS = [
   },
   {
     id: "course-planner",
-    imgs: [
+    images: [
       "/image/course-planner1.jpg",
       "/image/course-planner2.jpg",
       "/image/course-planner3.jpg",
@@ -80,7 +80,7 @@ export const PROJECTS = [
   },
   {
     id: "portfolio",
-    imgs: ["/image/portfolio1.jpg"],
+    images: ["/image/portfolio1.jpg"],
     title: "Porfolio Website",
     desc: "A website built to showcase my projects and highlight my skills.",
     href: "http://michaelkibler.dev/",

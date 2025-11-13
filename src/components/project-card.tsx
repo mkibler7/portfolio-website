@@ -10,7 +10,7 @@ import {
 } from "@material-tailwind/react";
 
 interface ProjectCardProps {
-  imgs: string[];
+  images: string[];
   title: string;
   desc: string;
   href: string;
@@ -20,7 +20,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({
-  imgs,
+  images,
   title,
   desc,
   href,
@@ -32,14 +32,14 @@ export function ProjectCard({
     <Card color="transparent" shadow={true} className="bg-violet-50 h-[525px]">
       <CardHeader
         floated={false}
-        className="mx-0 mt-0 !rounded-b-none rounded-xl overflow-hidden h-[clamp(180px,35vw,260px)]"
+        className="mx-0 mt-0 rounded-b-none rounded-xl overflow-hidden h-[clamp(180px,35vw,260px)]"
         onMouseEnter={onImageEnter}
         onMouseLeave={onImageLeave}
         onMouseMove={onImageMove}
       >
         {/* Project Image */}
         <Image
-          src={imgs[0]}
+          src={images[0]}
           alt={title}
           width={768}
           height={768}
@@ -66,7 +66,10 @@ export function ProjectCard({
           rel="noopener noreferrer"
           className="mb-4"
         >
-          <Button color="gray" size="sm" className="mt-auto mb-4">
+          <Button
+            size="sm"
+            className="mt-auto mb-4 bg-violet-900 hover:bg-violet-600"
+          >
             see details
           </Button>
         </a>

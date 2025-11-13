@@ -1,6 +1,8 @@
 "use client";
 
 import { Typography, Button } from "@material-tailwind/react";
+import DegreeIcon from "@/components/icons/degree-icon";
+
 import {
   ChartBarIcon,
   PuzzlePieceIcon,
@@ -11,17 +13,10 @@ import ResumeItem from "../../components/resume-item";
 
 const RESUME_ITEMS = [
   {
-    icon: ChartBarIcon,
-    children: "Bachelor of Science in Computer Science",
+    icon: DegreeIcon,
+    degree: "Bachelor of Science in Computer Science",
+    school: "Southern New Hampshire University — 2025",
   },
-  // {
-  //   icon: PuzzlePieceIcon,
-  //   children: "Certified Web Developer ",
-  // },
-  // {
-  //   icon: CursorArrowRaysIcon,
-  //   children: "Frontend Framework Proficiency Certification",
-  // },
 ];
 
 export function Resume() {
@@ -51,7 +46,7 @@ export function Resume() {
             </Button>
           </a>
         </div>
-        <div className="col-span-1 grid gap-y-6 lg:ml-auto pr-0 lg:pr-12 xl:pr-32">
+        <div className="col-span-1 flex justify-center items-center">
           {RESUME_ITEMS.map((props, idx) => (
             <ResumeItem key={idx} {...props} />
           ))}

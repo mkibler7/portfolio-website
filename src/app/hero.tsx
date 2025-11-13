@@ -61,7 +61,7 @@ export default function Hero() {
             priority
             placeholder="blur"
             blurDataURL={`/image/self-portrait-blur.jpg`}
-            onLoadingComplete={() => setLoaded(true)}
+            onLoad={() => setLoaded(true)}
           />
         </div>
       </div>

@@ -10,6 +10,7 @@ import ContactForm from "./contact-form";
 import Navbar from "../components/navbar";
 import Footer from "..//components/footer";
 import { useState } from "react";
+import AboutMe from "@/components/about-me";
 
 export default function Portfolio() {
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
@@ -28,6 +29,7 @@ export default function Portfolio() {
         setHoveredProjectId={setHoveredProjectId}
       />
       <Resume />
+      <AboutMe />
       {/* <Testimonial /> */}
       {/* <PopularClients /> */}
       <ContactForm />

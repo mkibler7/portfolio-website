@@ -50,7 +50,7 @@ export function Projects({ hoveredSkill, setHoveredProjectId }: ProjectsProps) {
           const handleCardLeave = () => setHoveredProjectId(null);
 
           const handleImageEnter = () => {
-            setPreviewImages(project.imgs || []); // array of images from your data
+            setPreviewImages(project.images);
             setPreviewVisible(true);
           };
 

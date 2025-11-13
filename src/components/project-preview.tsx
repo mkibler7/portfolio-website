@@ -20,12 +20,19 @@ export default function ProjectPreview({
   const MAX_WIDTH = 280;
   const MAX_HEIGHT = 180;
 
-  const [imgSize, setImgSize] = useState({ w: MAX_WIDTH, h: MAX_HEIGHT });
+  const [imgSize, setImgSize] = useState({
+    w: MAX_WIDTH,
+    h: MAX_HEIGHT,
+  });
 
-  // Load natural image size
   useEffect(() => {
+    if (!visible) return;
+    if (!images || images.length === 0) return;
+    if (!images[index]) return;
+
     const img = new window.Image();
     img.src = images[index];
+
     img.onload = () => {
       const { naturalWidth, naturalHeight } = img;
       const ratio = Math.min(
@@ -38,24 +45,25 @@ export default function ProjectPreview({
         h: naturalHeight * ratio,
       });
     };
-  }, [images, index]);
+  }, [visible, images, index]);
 
-  // Preload
   useEffect(() => {
-    images.forEach((src) => (new window.Image().src = src));
+    if (!images) return;
+    images.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
   }, [images]);
 
-  // Reset
   useEffect(() => {
-    if (visible) {
-      setIndex(0);
-      setFade(true);
-    }
+    if (!visible) return;
+    setIndex(0);
+    setFade(true);
   }, [visible]);
 
-  // Cycle images
   useEffect(() => {
-    if (!visible || images.length <= 1) return;
+    if (!visible) return;
+    if (!images || images.length <= 1) return;
 
     const interval = setInterval(() => {
       setFade(false);
@@ -69,7 +77,9 @@ export default function ProjectPreview({
     return () => clearInterval(interval);
   }, [visible, images]);
 
-  if (!visible) return null;
+  if (!visible || !images || images.length === 0) {
+    return null;
+  }
 
   return (
     <div
@@ -83,7 +93,6 @@ export default function ProjectPreview({
         left: position.x + 40,
       }}
     >
-      {/* Dynamically size based on image */}
       <div
         style={{
           width: imgSize.w,
@@ -94,7 +103,7 @@ export default function ProjectPreview({
         <Image
           key={index}
           src={images[index]}
-          alt="preview"
+          alt="project preview"
           unoptimized
           width={imgSize.w}
           height={imgSize.h}

@@ -50,34 +50,29 @@ interface NavItemProps {
   external: boolean;
 }
 
-function NavItem({ children, href = "#", external = false }: NavItemProps) {
+function NavItem({ children, href, external }: NavItemProps) {
+  const safeHref = href ?? "#"; // prevent undefined href
+
   const classes =
     "flex items-center gap-2 font-medium hover:text-violet-600 text-violet-900 justify-center";
 
   if (external) {
     return (
-      <li className="w-full">
-        <Typography
-          as="a"
-          href={href || "#"}
-          target={href ? "_blank" : "_self"}
-          variant="paragraph"
-          color="gray"
-          className="flex items-center gap-2 font-medium hover:text-violet-600 text-violet-900 justify-center"
-        >
-          {children}
-        </Typography>
-      </li>
+      <a
+        href={safeHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={classes}
+      >
+        {children}
+      </a>
     );
   }
 
-  // For internal links like /resume → use Next.js Link
   return (
-    <li className="w-full">
-      <Link href={href} className={classes}>
-        {children}
-      </Link>
-    </li>
+    <Link href={safeHref} className={classes}>
+      {children}
+    </Link>
   );
 }
 
@@ -116,13 +111,12 @@ export function Navbar() {
         {/* top row */}
         <div className="container mx-auto flex items-center justify-between lg:grid lg:grid-cols-3">
           {/* Left: Logo */}
-          <Typography
-            as="a"
+          <Link
             href="/"
             className="text-lg font-bold text-violet-900 tracking-wide hover:text-violet-700 transition-colors"
           >
             Kibler
-          </Typography>
+          </Link>
 
           {/* Center: Social Links/Resume (desktop) */}
           <ul className="hidden lg:flex items-center justify-center gap-8 mr-5">
@@ -191,7 +185,7 @@ export function Navbar() {
                       : "border-b border-gray-200/30"
                   } py-2`}
                 >
-                  <NavItem key={name} href={href} external={external}>
+                  <NavItem href={href} external={external}>
                     <Icon className="h-5 w-5" />
                     {name}
                   </NavItem>
@@ -203,7 +197,7 @@ export function Navbar() {
               <Button
                 variant="text"
                 className="text-violet-900 hover:text-violet-600 w-full"
-                onClick={() => handleScroll("projects")}
+                onClick={() => handleScroll("skills")}
               >
                 Projects
               </Button>
