@@ -29,7 +29,7 @@ export const PROJECTS = [
       "/image/travlr7.jpg",
     ],
     title: "Travlr",
-    desc: "A fullstack application built on the MEAN stack to recommend travel packages.",
+    desc: "A full-stack application built on the MEAN stack to recommend personalized travel packages.",
     href: "https://github.com/mkibler7/Travlr-Getaways?tab=readme-ov-file",
     skills: [
       "Angular",
@@ -56,7 +56,7 @@ export const PROJECTS = [
       "/image/weight-wise4.jpg",
     ],
     title: "Weight-Wise",
-    desc: "An Android application developed to allow user's to record data related to their weight goals.",
+    desc: "An Android application that allows users to record and track data related to their weight-loss goals.",
     href: "https://github.com/mkibler7/Weight-Wise",
     skills: [
       "SQLite",
@@ -75,7 +75,7 @@ export const PROJECTS = [
       "/image/course-planner3.jpg",
     ],
     title: "Course Planner",
-    desc: "A simple CLI application used to show which prerequisite classes are needed before enrolling in a specific class.",
+    desc: "A CLI application that displays required prerequisite courses before enrolling.",
     href: "https://github.com/mkibler7/Course-Prerequisite-Manager",
     skills: ["C++", "Visual Studio", "SQLite", "MVC Architecture", "GitHub"],
   },
@@ -83,7 +83,7 @@ export const PROJECTS = [
     id: "portfolio",
     images: ["/image/portfolio1.jpg"],
     title: "Porfolio Website",
-    desc: "A website built to showcase my projects and highlight my skills.",
+    desc: "A personal portfolio website designed to highlight my projects, skills, and experience.",
     href: "http://michaelkibler.dev/",
     skills: [
       "React",

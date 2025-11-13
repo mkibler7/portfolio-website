@@ -105,8 +105,8 @@ export default function AboutMe() {
           </Typography>
 
           <Typography className="font-normal text-gray-600 leading-relaxed max-w-lg">
-            My goals include starting up a family in the next 5 years and making
-            my first real estate purchase. I also plan on growing as a developer
+            My goals include starting a family in the next 5 years and making my
+            first real estate purchase. I also plan on growing as a developer
             and contributing to impactful teams and projects.
           </Typography>
         </div>

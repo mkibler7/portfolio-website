@@ -213,7 +213,7 @@ export function ContactForm() {
                         ? "bg-gray-400"
                         : status === "error"
                         ? "bg-red-600"
-                        : "bg-violet-900 hover:bg-violet-700"
+                        : "btn-primary"
                     }`}
                     size="md"
                   >

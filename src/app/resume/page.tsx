@@ -44,7 +44,7 @@ export default function ResumePage() {
           >
             <Button
               size="lg"
-              className="flex items-center gap-2 px-6 py-3 bg-violet-900"
+              className="flex items-center gap-2 px-6 py-3 btn-primary"
             >
               <ArrowDownTrayIcon className="h-5 w-5" />
               Download Resume

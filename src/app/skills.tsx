@@ -81,9 +81,9 @@ export function Skills({ hoveredProjectId, setHoveredSkill }: SkillsProps) {
           variant="lead"
           className="mx-auto w-full !text-gray-500 lg:w-10/12"
         >
-          I&apos;m a developer that loves to learn. I am extremely adaptive and
-          excel at picking up new tools or strategies that tackle specific
-          problems.
+          I&apos;m a developer that loves to learn. I&apos;m extremely adaptable
+          and excel at quickly learning different tools and strategies for
+          solving problems.
         </Typography>
       </div>
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

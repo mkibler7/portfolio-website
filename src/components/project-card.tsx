@@ -32,7 +32,7 @@ export function ProjectCard({
     <Card color="transparent" shadow={true} className="bg-violet-50 h-[525px]">
       <CardHeader
         floated={false}
-        className="mx-0 mt-0 rounded-b-none rounded-xl overflow-hidden h-[clamp(180px,35vw,260px)]"
+        className="mx-0 mt-0 rounded-b-none rounded-xl overflow-hidden h-[clamp(220px,40vw,320px)]"
         onMouseEnter={onImageEnter}
         onMouseLeave={onImageLeave}
         onMouseMove={onImageMove}
@@ -66,10 +66,7 @@ export function ProjectCard({
           rel="noopener noreferrer"
           className="mb-4"
         >
-          <Button
-            size="sm"
-            className="mt-auto mb-4 bg-violet-900 hover:bg-violet-600"
-          >
+          <Button size="sm" className="mt-auto mb-4 btn-primary">
             see details
           </Button>
         </a>

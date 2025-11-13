@@ -4,7 +4,9 @@ import React from "react";
 import LinkedInIcon from "./icons/linkedin-icon";
 import GitHubIcon from "./icons/github-icon";
 import ResumeIcon from "./icons/resume-icon";
+import KiblerIcon from "./icons/kibler-icon";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 import {
@@ -54,7 +56,7 @@ function NavItem({ children, href, external }: NavItemProps) {
   const safeHref = href ?? "#"; // prevent undefined href
 
   const classes =
-    "flex items-center gap-2 font-medium hover:text-violet-600 text-violet-900 justify-center";
+    "flex items-center gap-2 font-medium hover:text-[#5b21b6] text-violet-900 justify-center";
 
   if (external) {
     return (
@@ -109,14 +111,22 @@ export function Navbar() {
     <MTNavbar shadow={false} fullWidth className="border-0 sticky top-0 z-50">
       <div className="relative">
         {/* top row */}
-        <div className="container mx-auto flex items-center justify-between lg:grid lg:grid-cols-3">
+        <div className="container mx-auto flex items-center justify-between lg:grid lg:grid-cols-3 ">
           {/* Left: Logo */}
-          <Link
+          {/* <Link
             href="/"
-            className="text-lg font-bold text-violet-900 tracking-wide hover:text-violet-700 transition-colors"
+            className="text-lg font-bold text-violet-900 tracking-wide hover:text-[#5b21b6] transition-colors"
           >
             Kibler
-          </Link>
+          </Link> */}
+          <a href="/">
+            <Image
+              src="/image/kibler.png"
+              alt="kibler"
+              width={64}
+              height={64}
+            />
+          </a>
 
           {/* Center: Social Links/Resume (desktop) */}
           <ul className="hidden lg:flex items-center justify-center gap-8 mr-5">
@@ -132,7 +142,7 @@ export function Navbar() {
           <div className="ml-5 hidden lg:flex items-center justify-end gap-2">
             <Button
               variant="text"
-              className="text-violet-900 hover:text-violet-600"
+              className="text-violet-900 hover:text-[#5b21b6]"
               onClick={() => handleScroll("skills")}
             >
               Projects
@@ -140,14 +150,14 @@ export function Navbar() {
 
             <Button
               variant="text"
-              className="text-violet-900 hover:text-violet-600"
+              className="text-violet-900 hover:text-[#5b21b6]"
               onClick={() => handleScroll("resume")}
             >
               About
             </Button>
             <Button
               variant="filled"
-              className="bg-violet-900 hover:bg-violet-600"
+              className="bg-violet-900 hover:bg-[#5b21b6]"
               onClick={() => handleScroll("contact")}
             >
               Contact
@@ -210,7 +220,7 @@ export function Navbar() {
               </Button>
               <Button
                 variant="filled"
-                className="w-full bg-violet-900 hover:bg-violet-600 !shadow-none"
+                className="w-full btn-primary !shadow-none"
                 onClick={() => handleScroll("contact")}
               >
                 Contact

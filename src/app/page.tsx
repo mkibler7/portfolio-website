@@ -19,7 +19,6 @@ export default function Portfolio() {
     <>
       <Navbar />
       <Hero />
-      {/* <Clients /> */}
       <Skills
         hoveredProjectId={hoveredProjectId}
         setHoveredSkill={setHoveredSkill}
@@ -30,8 +29,6 @@ export default function Portfolio() {
       />
       <Resume />
       <AboutMe />
-      {/* <Testimonial /> */}
-      {/* <PopularClients /> */}
       <ContactForm />
       <Footer />
     </>
