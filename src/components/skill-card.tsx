@@ -1,12 +1,21 @@
 import { Card, CardBody, Typography } from "@material-tailwind/react";
+import { PROJECTS, Project } from "../data/projectsData";
 
 interface SkillCardProps {
   title: string;
   icon: React.ElementType;
   children: string[];
+  hoveredProjectId?: string | null;
+  setHoveredSkill?: (skill: string | null) => void;
 }
 
-export function SkillCard({ icon: Icon, title, children }: SkillCardProps) {
+export function SkillCard({
+  icon: Icon,
+  title,
+  children,
+  hoveredProjectId,
+  setHoveredSkill,
+}: SkillCardProps) {
   return (
     <Card color="transparent" shadow={false}>
       <CardBody className="grid justify-center text-center">
@@ -24,8 +33,18 @@ export function SkillCard({ icon: Icon, title, children }: SkillCardProps) {
           {children.map((skill, index) => (
             <li
               key={index}
-              className="rounded-full bg-violet-100 border border-violet-300 text-violet-800 
-                 text-sm font-medium py-2 px-4 shadow-sm select-none hover:bg-violet-800 hover:text-violet-100"
+              onMouseEnter={() => setHoveredSkill?.(skill)}
+              onMouseLeave={() => setHoveredSkill?.(null)}
+              className={`rounded-full border text-sm font-medium py-2 px-4 shadow-sm select-none
+    transition-all duration-300 ease-in-out
+    ${
+      hoveredProjectId &&
+      PROJECTS.some(
+        (p) => p.id === hoveredProjectId && p.skills.includes(skill)
+      )
+        ? "bg-violet-700 text-white border-violet-700 scale-105 shadow-[0_0_12px_rgba(139,92,246,0.6)]"
+        : "bg-violet-100 border-violet-300 text-violet-800 hover:bg-violet-800 hover:text-violet-100"
+    }`}
             >
               {skill}
             </li>

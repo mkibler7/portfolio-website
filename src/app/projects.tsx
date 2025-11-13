@@ -1,37 +1,22 @@
 "use client";
 
 import ProjectCard from "../components/project-card";
+import ProjectPreview from "@/components/project-preview";
 import { Typography } from "@material-tailwind/react";
 import { getImagePrefix } from "../../utils/utils";
+import { useState } from "react";
+import { PROJECTS, Project } from "../data/projectsData";
 
-const PROJECTS = [
-  {
-    img: `/image/travlr1.jpg`,
-    title: "Travlr",
-    desc: "A fullstack application built on the MEAN stack to recommend travel packages.",
-    href: "https://github.com/mkibler7/Travlr-Getaways?tab=readme-ov-file",
-  },
-  {
-    img: `/image/weight-wise1.jpg`,
-    title: "Weight-Wise",
-    desc: "An Android application developed to allow user's to record data related to their weight goals.",
-    href: "https://github.com/mkibler7/Weight-Wise",
-  },
-  {
-    img: `/image/course-planner1.jpg`,
-    title: "Course Planner",
-    desc: "A simple CLI application used to show which prerequisite classes are needed before enrolling in a specific class.",
-    href: "https://github.com/mkibler7/Course-Prerequisite-Manager",
-  },
-  {
-    img: `/image/portfolio1.jpg`,
-    title: "Porfolio Website",
-    desc: "A website built to showcase my projects and highlight my skills.",
-    href: "http://michaelkibler.dev/",
-  },
-];
+interface ProjectsProps {
+  hoveredSkill: string | null;
+  setHoveredProjectId: (id: string | null) => void;
+}
 
-export function Projects() {
+export function Projects({ hoveredSkill, setHoveredProjectId }: ProjectsProps) {
+  const [previewVisible, setPreviewVisible] = useState(false);
+  const [previewImages, setPreviewImages] = useState<string[]>([]);
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+
   return (
     <section id="projects" className="py-28 px-8">
       <div className="container mx-auto mb-[4.25rem] text-center">
@@ -54,11 +39,59 @@ export function Projects() {
       </div>
 
       {/* Project Cards */}
-      <div className="container mx-auto  grid grid-cols-1 gap-x-10 gap-y-20 md:grid-cols-2 xl:grid-cols-4">
-        {PROJECTS.map((props, idx) => (
-          <ProjectCard key={idx} {...props} />
-        ))}
+      <div className="container mx-auto grid grid-cols-1 gap-x-10 gap-y-20 md:grid-cols-2 xl:grid-cols-4">
+        {PROJECTS.map((project, idx) => {
+          const isHighlighted = hoveredSkill
+            ? project.skills.includes(hoveredSkill)
+            : false;
+
+          // skill highlight handlers (whole card)
+          const handleCardEnter = () => setHoveredProjectId(project.id);
+          const handleCardLeave = () => setHoveredProjectId(null);
+
+          const handleImageEnter = () => {
+            setPreviewImages(project.imgs || []); // array of images from your data
+            setPreviewVisible(true);
+          };
+
+          const handleImageLeave = () => {
+            setPreviewVisible(false);
+          };
+
+          const handleImageMove = (e: React.MouseEvent<HTMLDivElement>) => {
+            setCursorPos({ x: e.clientX, y: e.clientY });
+          };
+
+          return (
+            <div
+              key={idx}
+              onMouseEnter={handleCardEnter}
+              onMouseLeave={handleCardLeave}
+              className={`rounded-2xl overflow-hidden group relative hover:-translate-y-1 hover:rotate-[0.5deg] transition-all duration-300 ${
+                isHighlighted
+                  ? "scale-[1.03] opacity-100 shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-transform duration-300 ease-out"
+                  : hoveredSkill
+                  ? "opacity-50 blur-[0.5px] transition-opacity duration-300 ease-out"
+                  : "opacity-100 transition-all duration-300 ease-in-out"
+              }`}
+            >
+              <div className="rounded-2xl overflow-hidden">
+                <ProjectCard
+                  {...project}
+                  onImageEnter={handleImageEnter}
+                  onImageLeave={handleImageLeave}
+                  onImageMove={handleImageMove}
+                />
+              </div>
+            </div>
+          );
+        })}
       </div>
+      <ProjectPreview
+        images={previewImages}
+        position={cursorPos}
+        visible={previewVisible}
+      />
     </section>
   );
 }

@@ -4,8 +4,14 @@ import { Typography } from "@material-tailwind/react";
 import CodingIcon from "../components/icons/coding-icon";
 import ToolIcon from "../components/icons/tool-icon";
 import BooksIcon from "../components/icons/books-icon";
+import { PROJECTS, Project } from "../data/projectsData";
 
 import SkillCard from "../components/skill-card";
+
+interface SkillsProps {
+  hoveredProjectId: string | null;
+  setHoveredSkill: (skill: string | null) => void;
+}
 
 const SKILLS = [
   {
@@ -20,13 +26,14 @@ const SKILLS = [
       "JavaScript (ES6+)",
       "C++",
       "Python",
+      "XML",
     ],
   },
   {
     icon: ToolIcon,
     title: "Tools & Platforms",
     children: [
-      "Git & GitHub",
+      "GitHub",
       "MySQL",
       "SQLite",
       "MongoDB",
@@ -38,6 +45,7 @@ const SKILLS = [
       "Vercel",
       "VS Code",
       "Resend",
+      "Android Studio",
     ],
   },
   {
@@ -56,7 +64,7 @@ const SKILLS = [
   },
 ];
 
-export function Skills() {
+export function Skills({ hoveredProjectId, setHoveredSkill }: SkillsProps) {
   return (
     <section className="px-8 mt-20">
       <div className="container mx-auto mb-5 text-center">
@@ -80,7 +88,12 @@ export function Skills() {
       </div>
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {SKILLS.map((props, idx) => (
-          <SkillCard key={idx} {...props} />
+          <SkillCard
+            key={idx}
+            {...props}
+            hoveredProjectId={hoveredProjectId}
+            setHoveredSkill={setHoveredSkill}
+          />
         ))}
       </div>
     </section>

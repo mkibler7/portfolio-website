@@ -1,7 +1,4 @@
-// // components
-// import { Navbar, Footer } from "@/components";
-
-// sections
+"use client";
 import Hero from "./hero";
 import Clients from "./clients";
 import Skills from "./skills";
@@ -12,15 +9,24 @@ import PopularClients from "./popular-clients";
 import ContactForm from "./contact-form";
 import Navbar from "../components/navbar";
 import Footer from "..//components/footer";
+import { useState } from "react";
 
 export default function Portfolio() {
+  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
+  const [hoveredProjectId, setHoveredProjectId] = useState<string | null>(null);
   return (
     <>
       <Navbar />
       <Hero />
       {/* <Clients /> */}
-      <Skills />
-      <Projects />
+      <Skills
+        hoveredProjectId={hoveredProjectId}
+        setHoveredSkill={setHoveredSkill}
+      />
+      <Projects
+        hoveredSkill={hoveredSkill}
+        setHoveredProjectId={setHoveredProjectId}
+      />
       <Resume />
       {/* <Testimonial /> */}
       {/* <PopularClients /> */}
