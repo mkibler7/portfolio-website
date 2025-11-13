@@ -133,7 +133,7 @@ export function Navbar() {
             <Button
               variant="text"
               className="text-violet-900 hover:text-violet-600"
-              onClick={() => handleScroll("projects")}
+              onClick={() => handleScroll("skills")}
             >
               Projects
             </Button>

@@ -44,6 +44,7 @@ export const PROJECTS = [
       "HTML5",
       "CSS3",
       "GitHub",
+      "VS Code",
     ],
   },
   {
@@ -99,6 +100,7 @@ export const PROJECTS = [
       "Material Tailwind",
       "Vercel",
       "Resend",
+      "VS Code",
     ],
   },
 ];

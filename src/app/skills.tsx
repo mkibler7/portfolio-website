@@ -66,7 +66,7 @@ const SKILLS = [
 
 export function Skills({ hoveredProjectId, setHoveredSkill }: SkillsProps) {
   return (
-    <section id="skills" className="px-8 mt-20">
+    <section id="skills" className="px-8 mt-20 scroll-mt-32">
       <div className="container mx-auto mb-5 text-center">
         <Typography
           color="blue-gray"
