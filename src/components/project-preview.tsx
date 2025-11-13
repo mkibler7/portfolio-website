@@ -15,61 +15,100 @@ export default function ProjectPreview({
   visible,
 }: ProjectPreviewProps) {
   const [index, setIndex] = useState(0);
-  const [loaded, setLoaded] = useState(false);
-  const [naturalSize, setNaturalSize] = useState({ w: 0, h: 0 });
+  const [fade, setFade] = useState(true);
 
-  // Reset to first image when becoming visible
+  const MAX_WIDTH = 280;
+  const MAX_HEIGHT = 180;
+
+  const [imgSize, setImgSize] = useState({ w: MAX_WIDTH, h: MAX_HEIGHT });
+
+  // Load natural image size
+  useEffect(() => {
+    const img = new window.Image();
+    img.src = images[index];
+    img.onload = () => {
+      const { naturalWidth, naturalHeight } = img;
+      const ratio = Math.min(
+        MAX_WIDTH / naturalWidth,
+        MAX_HEIGHT / naturalHeight
+      );
+
+      setImgSize({
+        w: naturalWidth * ratio,
+        h: naturalHeight * ratio,
+      });
+    };
+  }, [images, index]);
+
+  // Preload
+  useEffect(() => {
+    images.forEach((src) => (new window.Image().src = src));
+  }, [images]);
+
+  // Reset
   useEffect(() => {
     if (visible) {
       setIndex(0);
-      setLoaded(false);
+      setFade(true);
     }
   }, [visible]);
 
-  // Instantly cycle through images — no fade
+  // Cycle images
   useEffect(() => {
     if (!visible || images.length <= 1) return;
 
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
-      setLoaded(false);
+      setFade(false);
+
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % images.length);
+        setFade(true);
+      }, 120);
     }, 1800);
 
     return () => clearInterval(interval);
   }, [visible, images]);
 
-  if (!visible || images.length === 0) return null;
-
-  const { w, h } = naturalSize;
-  const scale = 1.25; // enlarge slightly for readability
-  const width = w ? w * scale : 500;
-  const height = h ? h * scale : 300;
+  if (!visible) return null;
 
   return (
     <div
-      className={`fixed pointer-events-none z-[9999] ${
-        visible ? "opacity-100" : "opacity-0"
-      } transition-opacity duration-150 ease-out`}
+      className={`
+        fixed pointer-events-none z-[9999]
+        transition-opacity duration-150
+        ${visible ? "opacity-100" : "opacity-0"}
+      `}
       style={{
-        top: position.y - 100,
-        left: position.x + 60,
-        transform: "translate(-50%, -50%)",
+        top: position.y - 40,
+        left: position.x + 40,
       }}
     >
-      <Image
-        key={index}
-        src={images[index]}
-        alt="Project preview"
-        width={width}
-        height={height}
-        className="max-w-[800px] max-h-[500px] object-contain select-none"
-        unoptimized
-        onLoad={(e) => {
-          const img = e.currentTarget as HTMLImageElement;
-          setNaturalSize({ w: img.naturalWidth, h: img.naturalHeight });
-          setLoaded(true);
+      {/* Dynamically size based on image */}
+      <div
+        style={{
+          width: imgSize.w,
+          height: imgSize.h,
+          position: "relative",
         }}
-      />
+      >
+        <Image
+          key={index}
+          src={images[index]}
+          alt="preview"
+          unoptimized
+          width={imgSize.w}
+          height={imgSize.h}
+          className={`
+            rounded-xl shadow-xl
+            transition-all duration-300 ease-out
+            ${fade ? "opacity-100 scale-100" : "opacity-0 scale-95"}
+            object-contain
+          `}
+          style={{
+            border: "2px solid rgba(255,255,255,0.4)",
+          }}
+        />
+      </div>
     </div>
   );
 }

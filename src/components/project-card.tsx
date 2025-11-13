@@ -32,7 +32,7 @@ export function ProjectCard({
     <Card color="transparent" shadow={true} className="bg-violet-50 h-[525px]">
       <CardHeader
         floated={false}
-        className="mx-0 mt-0 rouded-xl overflow-hidden h-[clamp(180px,35vw,260px)]"
+        className="mx-0 mt-0 !rounded-b-none rounded-xl overflow-hidden h-[clamp(180px,35vw,260px)]"
         onMouseEnter={onImageEnter}
         onMouseLeave={onImageLeave}
         onMouseMove={onImageMove}

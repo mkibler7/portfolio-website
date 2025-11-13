@@ -24,6 +24,7 @@ export function ContactForm() {
     email: "",
     message: "",
   });
+
   type Status = "idle" | "sending" | "success" | "error";
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");

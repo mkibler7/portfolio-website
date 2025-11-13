@@ -53,7 +53,6 @@ export const PROJECTS = [
       "/image/weight-wise2.jpg",
       "/image/weight-wise3.jpg",
       "/image/weight-wise4.jpg",
-      "/image/weight-wise5.jpg",
     ],
     title: "Weight-Wise",
     desc: "An Android application developed to allow user's to record data related to their weight goals.",
