@@ -35,7 +35,7 @@ export function SkillCard({
               key={index}
               onMouseEnter={() => setHoveredSkill?.(skill)}
               onMouseLeave={() => setHoveredSkill?.(null)}
-              className={`rounded-full border text-sm font-medium py-2 px-4 shadow-sm select-none
+              className={`rounded-full border text-[0.7rem] font-medium py-2 px-4 shadow-sm select-none
     transition-all duration-300 ease-in-out
     ${
       hoveredProjectId &&

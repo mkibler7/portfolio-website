@@ -66,35 +66,37 @@ const SKILLS = [
 
 export function Skills({ hoveredProjectId, setHoveredSkill }: SkillsProps) {
   return (
-    <section id="skills" className="px-8 mt-20 scroll-mt-32">
-      <div className="container mx-auto mb-5 text-center">
-        <Typography
-          color="blue-gray"
-          className="mb-2 font-bold uppercase text-violet-900 tracking-wide"
-        >
-          my skills
-        </Typography>
-        <Typography variant="h1" color="blue-gray" className="mb-4">
-          What I bring to the table
-        </Typography>
-        <Typography
-          variant="lead"
-          className="mx-auto w-full !text-gray-500 lg:w-10/12"
-        >
-          I&apos;m a developer that loves to learn. I&apos;m extremely adaptable
-          and excel at quickly learning different tools and strategies for
-          solving problems.
-        </Typography>
-      </div>
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {SKILLS.map((props, idx) => (
-          <SkillCard
-            key={idx}
-            {...props}
-            hoveredProjectId={hoveredProjectId}
-            setHoveredSkill={setHoveredSkill}
-          />
-        ))}
+    <section id="skills" className="pt-8 px-6 scroll-mt-24">
+      <div>
+        <div className="container mx-auto mb-5 text-center">
+          <Typography
+            color="blue-gray"
+            className="mb-2 font-bold uppercase text-violet-900 tracking-wide"
+          >
+            my skills
+          </Typography>
+          <Typography variant="h3" color="blue-gray" className="mb-4">
+            What I bring to the table
+          </Typography>
+          <Typography
+            variant="lead"
+            className="mx-auto w-full !text-gray-500 lg:w-10/12"
+          >
+            I&apos;m a developer that loves to learn. I&apos;m extremely
+            adaptable and excel at quickly learning different tools and
+            strategies for solving problems.
+          </Typography>
+        </div>
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {SKILLS.map((props, idx) => (
+            <SkillCard
+              key={idx}
+              {...props}
+              hoveredProjectId={hoveredProjectId}
+              setHoveredSkill={setHoveredSkill}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -18,17 +18,17 @@ export function Projects({ hoveredSkill, setHoveredProjectId }: ProjectsProps) {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
   return (
-    <section id="projects" className="py-28 px-8">
-      <div className="container mx-auto mb-[4.25rem] text-center">
+    <section id="projects" className="px-8 mb-8">
+      <div className="container mx-auto mb-[2rem] text-center">
         {/* Section Title */}
-        <Typography variant="h2" color="blue-gray" className="mb-10">
+        <Typography variant="h3" color="blue-gray" className="mt-6 mb-6">
           My Projects
         </Typography>
 
         {/* Section Description */}
         <Typography
           variant="lead"
-          className="mx-auto w-full px-4 font-normal !text-gray-500 lg:w-6/12"
+          className="mx-auto w-full px-4 text-[1rem] font-normal !text-gray-500 lg:w-6/12"
         >
           From concept to deployment, I design and develop full-stack web and
           mobile applications that deliver real-world impact. Whether it&apos;s
