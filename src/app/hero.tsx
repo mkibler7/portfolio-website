@@ -34,8 +34,8 @@ export default function Hero() {
             variant="lead"
             className="mb-4 !text-gray-500 md:pr-16 xl:pr-28"
           >
-            Californa-based developer. <br /> I build create scalable,
-            user-focused software with clean, maintainable code.
+            Californa-based developer. <br /> I build scalable, user-focused
+            software with clean, maintainable code.
           </Typography>
         </div>
         {/* Portrait Section */}
