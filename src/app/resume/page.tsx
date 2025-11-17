@@ -26,7 +26,7 @@ export default function ResumePage() {
         </div>
 
         {/* Inline PDF Viewer */}
-        <div className="w-full max-w-4xl h-[80vh] shadow-xl border border-indigo-100 rounded-xl overflow-hidden">
+        <div className="w-full max-w-4xl h-[70vh] shadow-xl border border-indigo-100 rounded-xl overflow-hidden">
           <iframe
             src="/resume.pdf"
             className="w-full h-full border-none"

@@ -7,15 +7,6 @@ export interface Project {
   skills: string[];
 }
 
-// interface Project {
-//   id: string;
-//   title: string;
-//   description: string;
-//   img: string;
-//   skills: string[];
-//   href: string;
-// }
-
 export const PROJECTS = [
   {
     id: "travlr",
@@ -81,10 +72,16 @@ export const PROJECTS = [
   },
   {
     id: "portfolio",
-    images: ["/image/portfolio1.jpg"],
-    title: "Porfolio Website",
+    images: [
+      "/image/portfolio1.jpg",
+      "/image/portfolio2.jpg",
+      "/image/portfolio3.jpg",
+      "/image/portfolio4.jpg",
+      "/image/portfolio5.jpg",
+    ],
+    title: "Portfolio Website",
     desc: "A personal portfolio website designed to highlight my projects, skills, and experience.",
-    href: "http://michaelkibler.dev/",
+    href: "https://github.com/mkibler7/portfolio-website",
     skills: [
       "React",
       "Node.js",
@@ -101,6 +98,7 @@ export const PROJECTS = [
       "Vercel",
       "Resend",
       "VS Code",
+      "Next.js",
     ],
   },
 ];

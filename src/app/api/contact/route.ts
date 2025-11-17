@@ -10,14 +10,6 @@ export async function POST(req: Request) {
 
     const fullName = [firstName, lastName].filter(Boolean).join(" ");
 
-    // TEST log to confirm data is received properly
-    console.log("📩 Contact form data:", {
-      firstName,
-      lastName,
-      email,
-      message,
-    });
-
     await resend.emails.send({
       from: "Michael Kibler <contact@michaelkibler.dev>",
       to: process.env.CONTACT_RECEIVER!,
