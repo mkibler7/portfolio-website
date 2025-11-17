@@ -41,19 +41,19 @@ This project serves as my primary professional portfolio and includes:
 ### Screenshots
 
 #### Hero Section
-![Hero Page](public/image/portfolio1.jpg)
+![Hero Page](https://github.com/user-attachments/assets/39bf4e70-98cc-4cb9-8ea7-c5d317c6c97d)
 
 #### Skills Section
-![Skills Page](public/image/portfolio2.jpg)
+![Skills Page](https://github.com/user-attachments/assets/05f76c60-597a-4766-8dcb-608411a2593e)
 
 #### About Section
-![About Page](public/image/portfolio3.jpg)
+![About Page](https://github.com/user-attachments/assets/6dc3902b-797f-4e11-8334-ebbe663d2fb6)
 
 #### Contact Section
-![Contact Page](public/image/portfolio4.jpg)
+![Contact Page](https://github.com/user-attachments/assets/7630d01a-b495-4de5-a843-31bd563468ce)
 
 #### Resume Inline-PDF Viewer
-![Resume Page](public/image/portfolio5.jpg)
+![Resume Page](https://github.com/user-attachments/assets/227df0bb-91e3-408c-95cc-30c5d93d0dfc)
 
 ## Live Demo
 **https://michaelkibler.dev**
