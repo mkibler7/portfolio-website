@@ -33,17 +33,42 @@ const SKILLS = [
     icon: ToolIcon,
     title: "Tools & Platforms",
     children: [
+      // Core tooling
+      "Git",
       "GitHub",
+      "VS Code",
+      "NPM",
+      "Postman",
+
+      // Data / storage
       "MySQL",
       "SQLite",
       "MongoDB",
-      "Next.js",
-      "NPM",
-      "REST APIs",
-      "Agile / Scrum",
-      "MVC Architecture",
+      "MongoDB Atlas",
+
+      // Deployment
       "Vercel",
-      "VS Code",
+      "Render",
+
+      // APIs / architecture
+      "REST APIs",
+      "MVC Architecture",
+      "Separation of Concerns",
+
+      // Auth / security (project-relevant)
+      "JWT Authentication",
+      "Access/Refresh Tokens",
+      "HttpOnly Cookies",
+      "Secure Cookie-Based Auth",
+      "Rate Limiting",
+      "Email Verification",
+
+      // Data modeling / backend patterns
+      "Schema Design",
+      "Data Seeding",
+
+      // Misc
+      "Agile / Scrum",
       "Resend",
       "Android Studio",
     ],
@@ -54,8 +79,12 @@ const SKILLS = [
     children: [
       "React",
       "Angular",
+      "Next.js",
+      "Next.js (App Router)",
       "Node.js",
       "Express.js",
+      "Mongoose",
+      "bcrypt",
       "Bootstrap",
       "Tailwind CSS",
       "Material Tailwind",

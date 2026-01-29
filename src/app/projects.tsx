@@ -3,7 +3,6 @@
 import ProjectCard from "../components/project-card";
 import ProjectPreview from "@/components/project-preview";
 import { Typography } from "@material-tailwind/react";
-import { getImagePrefix } from "../../utils/utils";
 import { useState } from "react";
 import { PROJECTS, Project } from "../data/projectsData";
 
@@ -71,8 +70,8 @@ export function Projects({ hoveredSkill, setHoveredProjectId }: ProjectsProps) {
                 isHighlighted
                   ? "scale-[1.03] opacity-100 shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-transform duration-300 ease-out"
                   : hoveredSkill
-                  ? "opacity-50 blur-[0.5px] transition-opacity duration-300 ease-out"
-                  : "opacity-100 transition-all duration-300 ease-in-out"
+                    ? "opacity-50 blur-[0.5px] transition-opacity duration-300 ease-out"
+                    : "opacity-100 transition-all duration-300 ease-in-out"
               }`}
             >
               <div className="rounded-2xl overflow-hidden">

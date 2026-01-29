@@ -8,7 +8,7 @@ import dynamic from "next/dynamic";
 
 const ClientThemeProvider = dynamic(
   () => import("@/components/theme-provider"),
-  { ssr: false }
+  { ssr: false },
 );
 
 export const metadata: Metadata = {

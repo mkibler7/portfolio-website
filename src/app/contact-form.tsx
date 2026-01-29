@@ -31,7 +31,7 @@ export function ContactForm() {
 
   // Handle text field changes
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -116,7 +116,7 @@ export function ContactForm() {
               </Typography>
               <div className="flex gap-5 mb-3 text-gray-200">
                 <PhoneIcon className="h-6 w-6 " />
-                <Typography variant="h6">+1 (714) 316-3803</Typography>
+                <Typography variant="h6">+1 (714) 316-3181</Typography>
               </div>
               <div className="flex gap-5 mb-3 text-gray-200">
                 <EnvelopeIcon className="h-6 w-6" />
@@ -212,18 +212,18 @@ export function ContactForm() {
                       status === "success"
                         ? "bg-gray-400"
                         : status === "error"
-                        ? "bg-red-600"
-                        : "btn-primary"
+                          ? "bg-red-600"
+                          : "btn-primary"
                     }`}
                     size="md"
                   >
                     {status === "sending"
                       ? "Sending..."
                       : status === "success"
-                      ? "Message Delivered"
-                      : status === "error"
-                      ? "Try Again"
-                      : "Send Message"}
+                        ? "Message Delivered"
+                        : status === "error"
+                          ? "Try Again"
+                          : "Send Message"}
                   </Button>
                 </div>
               </form>
