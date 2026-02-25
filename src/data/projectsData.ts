@@ -18,7 +18,7 @@ export const PROJECTS = [
       "/image/set-tracker/mobile-workouts.png",
     ],
     title: "Set Tracker",
-    desc: "An workout application that allows users to track their workout sets and progress.",
+    desc: "A workout application that allows users to track their workout sets and progress.",
     href: "https://github.com/mkibler7/set-tracker",
     skills: [
       "TypeScript",
