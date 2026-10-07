@@ -29,13 +29,13 @@ export function SkillCard({
         <div className="mx-auto my-3 h-[2px] w-full bg-gradient-to-r from-transparent via-violet-500/20 to-transparent rounded-full"></div>
 
         {/* Map through array of skills */}
-        <ul className="flex flex-wrap justify-center gap-x-3 gap-y-4 px-4">
+        <ul className="flex flex-wrap justify-center gap-x-2 gap-y-3 px-2">
           {children.map((skill, index) => (
             <li
               key={index}
               onMouseEnter={() => setHoveredSkill?.(skill)}
               onMouseLeave={() => setHoveredSkill?.(null)}
-              className={`rounded-full border text-[0.7rem] font-medium py-2 px-4 shadow-sm select-none
+              className={`rounded-full border text-[0.7rem] font-medium py-2 px-3 shadow-sm select-none
     transition-all duration-300 ease-in-out
     ${
       hoveredProjectId &&
