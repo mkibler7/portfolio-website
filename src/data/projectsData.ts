@@ -9,7 +9,7 @@ export interface Project {
 
 export const PROJECTS = [
   {
-    id: "course-planner",
+    id: "set-tracker",
     images: [
       "/image/set-tracker/mobile-charts.png",
       "/image/set-tracker/mobile-dailylog.png",
@@ -26,7 +26,7 @@ export const PROJECTS = [
       "HTML5",
       "CSS3",
       "React",
-      "Next.js (App Router)",
+      "Next.js",
       "Tailwind CSS",
       "Heroicons",
       "Node.js",
@@ -42,13 +42,12 @@ export const PROJECTS = [
       "Access/Refresh Tokens",
       "Email Verification",
       "Rate Limiting",
-      "Secure Cookie-Based Auth",
       "Vercel",
       "Render",
-      "Mongodb Atlas",
+      "MongoDB Atlas",
       "GitHub",
       "VS Code",
-      "npm",
+      "NPM",
       "Postman",
       "MVC Architecture",
       "Separation of Concerns",

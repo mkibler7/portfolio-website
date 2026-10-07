@@ -4,6 +4,7 @@ import { Typography } from "@material-tailwind/react";
 import CodingIcon from "../components/icons/coding-icon";
 import ToolIcon from "../components/icons/tool-icon";
 import BooksIcon from "../components/icons/books-icon";
+import { ServerStackIcon as ServerIcon } from "@heroicons/react/24/outline";
 import { PROJECTS, Project } from "../data/projectsData";
 
 import SkillCard from "../components/skill-card";
@@ -19,76 +20,68 @@ const SKILLS = [
     title: "Languages",
     children: [
       "TypeScript",
+      "JavaScript (ES6+)",
       "Java",
+      "C++",
+      "Python",
       "SQL",
       "HTML5",
       "CSS3",
-      "JavaScript (ES6+)",
-      "C++",
-      "Python",
       "XML",
     ],
   },
   {
-    icon: ToolIcon,
-    title: "Tools & Platforms",
+    icon: BooksIcon,
+    title: "Frontend & Mobile",
     children: [
-      // Core tooling
-      "Git",
-      "GitHub",
-      "VS Code",
-      "NPM",
-      "Postman",
-
-      // Data / storage
-      "MySQL",
-      "SQLite",
-      "MongoDB",
-      "MongoDB Atlas",
-
-      // Deployment
-      "Vercel",
-      "Render",
-
-      // APIs / architecture
-      "REST APIs",
-      "MVC Architecture",
-      "Separation of Concerns",
-
-      // Auth / security (project-relevant)
-      "JWT Authentication",
-      "Access/Refresh Tokens",
-      "HttpOnly Cookies",
-      "Secure Cookie-Based Auth",
-      "Rate Limiting",
-      "Email Verification",
-
-      // Data modeling / backend patterns
-      "Schema Design",
-      "Data Seeding",
-
-      // Misc
-      "Agile / Scrum",
-      "Resend",
+      "React",
+      "Next.js",
+      "Angular",
+      "Tailwind CSS",
+      "Material Tailwind",
+      "Bootstrap",
+      "Heroicons",
       "Android Studio",
     ],
   },
   {
-    icon: BooksIcon,
-    title: "Libraries & Frameworks",
+    icon: ServerIcon,
+    title: "Backend & Auth",
     children: [
-      "React",
-      "Angular",
-      "Next.js",
-      "Next.js (App Router)",
       "Node.js",
       "Express.js",
-      "Mongoose",
+      "REST APIs",
+      "MVC Architecture",
+      "Separation of Concerns",
+      "JWT Authentication",
+      "Access/Refresh Tokens",
+      "HttpOnly Cookies",
       "bcrypt",
-      "Bootstrap",
-      "Tailwind CSS",
-      "Material Tailwind",
-      "Heroicons",
+      "Rate Limiting",
+      "Email Verification",
+      "Resend",
+    ],
+  },
+  {
+    icon: ToolIcon,
+    title: "Data & Tools",
+    children: [
+      "MongoDB",
+      "MongoDB Atlas",
+      "Mongoose",
+      "MySQL",
+      "SQLite",
+      "Schema Design",
+      "Data Seeding",
+      "Git",
+      "GitHub",
+      "VS Code",
+      "Visual Studio",
+      "NPM",
+      "Postman",
+      "Vercel",
+      "Render",
+      "Agile / Scrum",
     ],
   },
 ];
@@ -116,7 +109,7 @@ export function Skills({ hoveredProjectId, setHoveredSkill }: SkillsProps) {
             strategies for solving problems.
           </Typography>
         </div>
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
           {SKILLS.map((props, idx) => (
             <SkillCard
               key={idx}
