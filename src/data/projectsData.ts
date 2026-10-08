@@ -126,7 +126,7 @@ export const PROJECTS = [
       "/image/junit1.jpg",
     ],
     title: "Java Service Tests",
-    desc: "Contact, task and appointment services in Java, covered by 46 JUnit tests at 100% coverage and run on every push with GitHub Actions.",
+    desc: "Java services for contacts, tasks and appointments, backed by 46 JUnit tests at 100% coverage.",
     href: "https://github.com/mkibler7/JUnitTestingProject",
     skills: [
       "Java",
