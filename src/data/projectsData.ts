@@ -11,6 +11,7 @@ export const PROJECTS = [
   {
     id: "set-tracker",
     images: [
+      "/image/set-tracker-card.jpg",
       "/image/set-tracker/mobile-charts.png",
       "/image/set-tracker/mobile-dailylog.png",
       "/image/set-tracker/mobile-dash.png",
@@ -120,9 +121,9 @@ export const PROJECTS = [
   {
     id: "junit-services",
     images: [
-      "/image/junit1.jpg",
+      "/image/junit-card.jpg",
       "/image/junit2.jpg",
-      "/image/junit3.jpg",
+      "/image/junit1.jpg",
     ],
     title: "Java Service Tests",
     desc: "Contact, task and appointment services in Java, covered by 46 JUnit tests at 100% coverage and run on every push with GitHub Actions.",
